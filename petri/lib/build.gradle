@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+    id "io.freefair.lombok" version "6.0.0-m2"
+}
+
+dependencies {
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+    implementation 'org.slf4j:slf4j-simple:1.7.30'
+    implementation 'guru.nidi:graphviz-java:0.18.1'
+    implementation 'guru.nidi:graphviz-java-all-j2v8:0.18.1' //heavy! todo separate lib. or not?
+    implementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation "io.qameta.allure:allure-junit5:${allureVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}

@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    testImplementation 'io.rest-assured:rest-assured:4.4.0'
+    testImplementation 'io.rest-assured:json-path:4.4.0'
+    testImplementation 'javax.json:javax.json-api:1.1.4'
+    testImplementation 'org.glassfish:javax.json:1.1.4'
+
+    testImplementation "io.qameta.allure:allure-rest-assured:${allureVersion}"
+
+    implementation project(':lib')
+}
+
+test {
+    useJUnitPlatform()
+}

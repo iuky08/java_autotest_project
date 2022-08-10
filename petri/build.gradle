@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.8.1'
+}
+
+wrapper { gradleVersion = '7.0' }
+
+def allureVersion = "2.14.0"
+
+ext.allureVersion = allureVersion
+allprojects {
+    group 'com.actitime'
+    version '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'io.qameta.allure'
+
+    allure {
+        autoconfigure = true
+        version = allureVersion
+        downloadLink = "https://github.com/allure-framework/allure2/releases/download/${allureVersion}/allure-${allureVersion}.zip"
+        useJUnit5 {
+            version = allureVersion
+        }
+
+    }
+
+
+}

@@ -1,0 +1,16 @@
+pluginManagement {
+    resolutionStrategy {
+        eachPlugin {
+            if(requested.id.toString() == "io.qameta.allure")
+                useModule("com.github.vlsi:allure-gradle:2.8.1")
+        }
+    }
+    repositories {
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = 'petri1'
+
+include("lib", "demo")
+
